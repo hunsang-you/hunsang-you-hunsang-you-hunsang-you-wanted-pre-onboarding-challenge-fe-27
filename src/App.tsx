@@ -8,8 +8,7 @@ import {
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import TodoList from "./pages/todos/TodoList";
-import TodoDetail from "./components/TodoDetail";
-import "./App.css";
+import "./index.css";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -25,10 +24,6 @@ function App() {
         <Route
           path="/todos"
           element={token ? <TodoList /> : <Navigate to="/login" />}
-        />
-        <Route
-          path="/todos/:id"
-          element={token ? <TodoDetail /> : <Navigate to="/login" />}
         />
         <Route
           path="*"
